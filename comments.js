@@ -80,5 +80,8 @@ router.delete('/:id', function(req, res){
 			console.log("Error deleting comment");
 			res.status(500).send("error happened");
         }
+        else{
+            res.status(200).send(comment);
+        }
     });
 });
