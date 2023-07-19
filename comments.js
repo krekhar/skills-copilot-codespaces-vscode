@@ -73,15 +73,3 @@ router.put('/:id', jsonParser, function(req, res){
 		}
 	});
 });
-
-router.delete('/:id', function(req, res){
-	Comments.findOneAndRemove({id: req.params.id}, function(err, comment){
-		if(err){
-			console.log("Error deleting comment");
-			res.status(500).send("error happened");
-        }
-        else{
-            res.status(200).send(comment);
-        }
-    });
-});
